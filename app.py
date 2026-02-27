@@ -44,6 +44,29 @@ div.stButton > button { border-radius: 12px; padding: 0.5rem 0.9rem; }
 
 /* Hide Streamlit footer */
 footer {visibility: hidden;}
+/* ===== Fix mobile dark mode table contrast ===== */
+
+[data-testid="stDataFrame"] table{
+  background: transparent !important;
+}
+
+[data-testid="stDataFrame"] th,
+[data-testid="stDataFrame"] td{
+  color: rgba(255,255,255,0.92) !important;
+}
+
+[data-testid="stDataFrame"] thead th{
+  background: rgba(255,255,255,0.06) !important;
+}
+
+[data-testid="stDataFrame"] tbody tr:nth-child(odd) td{
+  background: rgba(255,255,255,0.03) !important;
+}
+
+/* אם תא קיבל רקע בהיר – להפוך טקסט לכהה */
+[data-testid="stDataFrame"] td[style*="background"]{
+  color: rgba(0,0,0,0.85) !important;
+}
 </style>
 """,
     unsafe_allow_html=True
